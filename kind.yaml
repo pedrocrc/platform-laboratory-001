@@ -1,6 +1,6 @@
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
-name: kind-cluster
+name: kind
 nodes:
 - role: control-plane
   extraMounts:
@@ -31,3 +31,5 @@ nodes:
   extraMounts:
   - hostPath: /Users/pedrocelestin/kind-pvcs
     containerPath: /kind-pvcs
+networking:
+  disableDefaultCNI: true

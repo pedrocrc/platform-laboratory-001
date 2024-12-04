@@ -6,10 +6,6 @@ metadata:
   name: postgres
   namespace: backstage-postgres
 spec:
-  persistentVolumeClaimRetentionPolicy:
-    whenDeleted: Retain
-    whenScaled: Retain
-  podManagementPolicy: OrderedReady
   replicas: 1
   revisionHistoryLimit: 2
   selector:
@@ -39,22 +35,11 @@ spec:
           requests:
             cpu: 250m
             memory: 256Mi
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
           name: postgres-storage
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
       volumes:
       - hostPath:
           path: /kind-pvcs/backstage-postgres/postgres-storage
           type: DirectoryOrCreate
         name: postgres-storage
-  updateStrategy:
-    rollingUpdate:
-      partition: 0
-    type: RollingUpdate

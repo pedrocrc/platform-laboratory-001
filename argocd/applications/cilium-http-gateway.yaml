@@ -10,11 +10,11 @@ spec:
   source:
     repoURL: https://github.com/pedrocrc/platform-laboratory-001.git
     targetRevision: HEAD
-    path: backstage/postgres/manifests
+    path: cilium/manifests
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: backstage-postgres
+    namespace: cilium-gateway
           
   syncPolicy:
     automated:
