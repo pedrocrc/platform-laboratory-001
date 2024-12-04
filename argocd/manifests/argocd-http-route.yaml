@@ -4,6 +4,8 @@ metadata:
   name: argocd-http
   namespace: argocd
 spec:
+  hostnames:
+  - argocd.localhost
   parentRefs:
   - name: cilium-http-gateway
     namespace: cilium-gateway
