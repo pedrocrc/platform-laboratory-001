@@ -4,7 +4,7 @@ name: kind
 nodes:
 - role: control-plane
   extraMounts:
-  - hostPath: /Users/pedrocelestin/kind-pvcs
+  - hostPath: PVCS_BASE_DIR
     containerPath: /kind-pvcs
 - role: worker
   extraPortMappings:
@@ -25,11 +25,11 @@ nodes:
     listenAddress: "0.0.0.0" # Optional, defaults to "0.0.0.0"
     protocol: tcp # Optional, defaults to tcp
   extraMounts:
-  - hostPath: /Users/pedrocelestin/kind-pvcs
+  - hostPath: PVCS_BASE_DIR
     containerPath: /kind-pvcs
 - role: worker
   extraMounts:
-  - hostPath: /Users/pedrocelestin/kind-pvcs
+  - hostPath: PVCS_BASE_DIR
     containerPath: /kind-pvcs
 networking:
   disableDefaultCNI: true

@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: backstage-postgres
+  name: cilium-http-gateway
   namespace: argocd
   labels:
-    app: backstage-postgres
+    app: cilium-http-gateway
 spec:
   project: default
   source:
