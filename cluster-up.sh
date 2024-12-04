@@ -18,7 +18,7 @@ helm upgrade --install --namespace kube-system cilium cilium/cilium --version 1.
     --set gatewayAPI.hostNetwork.enabled=true
 kubectl create ns argocd
 kubectl -n argocd create -f https://raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/install.yaml
-kubectl -n argocd patch cm argocd-cmd-params-cm --type merge -p '{"data":{"server.insecure": "true", "server.basehref": "/argocd"}}'
+kubectl -n argocd patch cm argocd-cmd-params-cm --type merge -p '{"data":{"server.insecure": "true"}}'
 for file in argocd/manifests; do
     kubectl create -f $file
 done
