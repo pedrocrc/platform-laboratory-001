@@ -12,7 +12,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /backstage
+        value: /
     filters:
       - type: URLRewrite
         urlRewrite:
