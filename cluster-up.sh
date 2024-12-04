@@ -7,7 +7,9 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.1.0/config/crd/standard/gateway.networking.k8s.io_referencegrants.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.1.0/config/crd/standard/gateway.networking.k8s.io_grpcroutes.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.1.0/config/crd/experimental/gateway.networking.k8s.io_tlsroutes.yaml
-helm upgrade --install --namespace kube-system --repo https://helm.cilium.io cilium cilium --version 1.16.4 \
+helm repo add cilium https://helm.cilium.io/
+helm repo update
+helm upgrade --install --namespace kube-system cilium/cilium cilium --version 1.16.4 \
     --namespace kube-system \
     --reuse-values \
     --set nodePort.enabled=true \
@@ -16,6 +18,9 @@ helm upgrade --install --namespace kube-system --repo https://helm.cilium.io cil
     --set gatewayAPI.hostNetwork.enabled=true
 kubectl create ns argocd
 kubectl -n argocd create -f https://raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/install.yaml
+for file in argocd/manifests; do
+    kubectl create -f $file
+done
 for file in argocd/applications; do
     kubectl create -f $file
 done
