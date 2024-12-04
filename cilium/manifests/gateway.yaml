@@ -11,3 +11,15 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+  - protocol: HTTPS
+    port: 30443
+    name: web-https-gw
+    hostname: "*.localhost"
+    tls:
+      certificateRefs:
+      - kind: Secret
+        group: ""
+        name: wildcard-localhost
+    allowedRoutes:
+      namespaces:
+        from: All
