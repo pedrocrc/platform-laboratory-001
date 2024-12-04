@@ -19,6 +19,7 @@ helm upgrade --install --namespace kube-system cilium cilium/cilium --version 1.
 kubectl create ns argocd
 kubectl -n argocd create -f https://raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/install.yaml
 kubectl -n argocd patch cm argocd-cmd-params-cm --type merge -p '{"data":{"server.insecure": "true"}}'
+kubectl -n argocd patch cm argocd-cm --type merge -p '{"data":{"resource.exclusions": "- apiGroups:\n  - cilium.io\n  kinds:\n  - CiliumIdentity\n  clusters:\n  - \"*\""}}'
 for file in argocd/manifests; do
     kubectl create -f $file
 done
