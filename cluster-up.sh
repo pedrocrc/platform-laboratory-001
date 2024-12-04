@@ -9,7 +9,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.1.0/config/crd/experimental/gateway.networking.k8s.io_tlsroutes.yaml
 helm repo add cilium https://helm.cilium.io/
 helm repo update
-helm upgrade --install --namespace kube-system cilium/cilium cilium --version 1.16.4 \
+helm upgrade --install --namespace kube-system cilium cilium/cilium --version 1.16.4 \
     --namespace kube-system \
     --reuse-values \
     --set nodePort.enabled=true \
