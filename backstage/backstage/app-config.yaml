@@ -68,20 +68,11 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  environment: development
+  environment: production
   providers:
     # See https://backstage.io/docs/auth/guest/provider
     guest: {}
     github:
-      development:
-        clientId: ${BACKSTAGE_GITHUB_CLIENTID}
-        clientSecret: ${BACKSTAGE_GITHUB_CLIENTSECRET}
-        callbackUrl: https://backstage.localhost:4433/api/auth/github/handler/frame
-        signIn:
-          resolvers:
-            # Matches the GitHub username with the Backstage user entity name.
-            # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
-            - resolver: usernameMatchingUserEntityName
       production:
         clientId: ${BACKSTAGE_GITHUB_CLIENTID}
         clientSecret: ${BACKSTAGE_GITHUB_CLIENTSECRET}
