@@ -1,6 +1,6 @@
 app:
   title: Scaffolded Backstage App
-  baseUrl: http://localhost:8080/backstage
+  baseUrl: https://backstage.localhost:4433/
 
 organization:
   name: My Company
@@ -12,7 +12,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: http://localhost:8080/backstage
+  baseUrl: https://backstage.localhost:4433/
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
@@ -76,6 +76,16 @@ auth:
       development:
         clientId: ${BACKSTAGE_GITHUB_CLIENTID}
         clientSecret: ${BACKSTAGE_GITHUB_CLIENTSECRET}
+        callbackUrl: http://localhost:7007/auth/github/handler/frame
+        signIn:
+          resolvers:
+            # Matches the GitHub username with the Backstage user entity name.
+            # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
+            - resolver: usernameMatchingUserEntityName
+      production:
+        clientId: ${BACKSTAGE_GITHUB_CLIENTID}
+        clientSecret: ${BACKSTAGE_GITHUB_CLIENTSECRET}
+        callbackUrl: https://backstage.localhost:4433/auth/github/handler/frame
         signIn:
           resolvers:
             # Matches the GitHub username with the Backstage user entity name.
