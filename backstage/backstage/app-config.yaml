@@ -1,6 +1,6 @@
 app:
   title: Scaffolded Backstage App
-  baseUrl: https://backstage.localhost:4433/
+  baseUrl: https://backstage.localhost:4433
 
 organization:
   name: My Company
@@ -12,7 +12,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: https://backstage.localhost:4433/
+  baseUrl: https://backstage.localhost:4433
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
