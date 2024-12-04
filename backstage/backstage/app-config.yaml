@@ -76,7 +76,7 @@ auth:
       production:
         clientId: ${BACKSTAGE_GITHUB_CLIENTID}
         clientSecret: ${BACKSTAGE_GITHUB_CLIENTSECRET}
-        callbackUrl: https://backstage.localhost:4433/api/auth/github/handler/frame
+        callbackUrl: https://backstage.localhost:4433/api/auth/github
         signIn:
           resolvers:
             # Matches the GitHub username with the Backstage user entity name.
