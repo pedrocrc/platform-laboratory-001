@@ -20,9 +20,12 @@ kubectl create ns argocd
 kubectl -n argocd create -f https://raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/install.yaml
 kubectl -n argocd patch cm argocd-cmd-params-cm --type merge -p '{"data":{"server.insecure": "true"}}'
 kubectl -n argocd patch cm argocd-cm --type merge -p '{"data":{"resource.exclusions": "- apiGroups:\n  - cilium.io\n  kinds:\n  - CiliumIdentity\n  clusters:\n  - \"*\""}}'
+kubectl -n argocd patch cm argocd-cm --type merge -p '{"data":{"accounts.backstage": "apiKey", "accounts.backstage.enabled": "true"}}'
 for file in argocd/manifests; do
     kubectl create -f $file
 done
 for file in argocd/applications; do
     kubectl create -f $file
 done
+kubectl create ns backstage
+kubectl -n backstage create secret generic argocd-secret --from-literal=token=$(argocd account generate-token -a backstage)
