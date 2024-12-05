@@ -29,3 +29,11 @@ spec:
           envFrom:
             - secretRef:
                 name: backstage-secrets
+          readinessProbe:
+            httpGet:
+              path: /.backstage/health/v1/readiness
+              port: http
+          liveNessProbe:
+            httpGet:
+              path: /.backstage/health/v1/liveness
+              port: http
