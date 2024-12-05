@@ -160,7 +160,7 @@ const serviceEntityPage = (
       title="Kubernetes"
       if={isKubernetesAvailable}
     >
-      <EntityKubernetesContent />
+      <EntityKubernetesContent refreshIntervalMs={5000} />
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/api" title="API">

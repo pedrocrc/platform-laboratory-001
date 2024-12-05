@@ -12,9 +12,10 @@ spec:
       labels:
         app: backstage
     spec:
+      serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.17
+          image: pedrocrc/lab-backstage:0.0.18
           imagePullPolicy: Always
           ports:
             - name: http
