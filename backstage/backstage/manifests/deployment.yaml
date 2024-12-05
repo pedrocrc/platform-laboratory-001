@@ -15,7 +15,7 @@ spec:
       serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.19
+          image: pedrocrc/lab-backstage:0.0.20
           imagePullPolicy: Always
           ports:
             - name: http
@@ -27,6 +27,12 @@ spec:
             requests:
               memory: "256Mi"
               cpu: "250m"
+          env:
+            - name: K8S_SA_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: backstage-sa-token
+                  key: token
           envFrom:
             - secretRef:
                 name: backstage-secrets

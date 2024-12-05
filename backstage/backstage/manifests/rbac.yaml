@@ -3,6 +3,14 @@ kind: ServiceAccount
 metadata:
   name: backstage
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backstage-sa-token
+  annotations:
+    kubernetes.io/service-account.name: backstage
+type: kubernetes.io/service-account-token
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
