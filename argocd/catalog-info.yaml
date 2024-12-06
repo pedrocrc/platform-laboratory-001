@@ -13,7 +13,6 @@ metadata:
     github.com/project-slug: argoproj/argo-cd
     backstage.io/techdocs-ref: dir:.
     lighthouse.com/website-url: https://argocd.localhost:4433
-    argocd/app-name: argocd
     backstage.io/kubernetes-namespace: argocd
     backstage.io/kubernetes-id: argocd
 spec:

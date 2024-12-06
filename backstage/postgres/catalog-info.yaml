@@ -13,6 +13,7 @@ metadata:
     backstage-postgres/app-name: backstage-postgres
     backstage.io/kubernetes-namespace: backstage-postgres
     backstage.io/kubernetes-id: backstage-postgres
+    argocd/app-name: backstage-postgres
 spec:
   type: service
   owner: guests
