@@ -25,6 +25,7 @@ kubectl -n argocd patch cm argocd-rbac-cm --type merge -p '{"data":{"policy.defa
 for file in argocd/manifests; do
     kubectl create -f $file
 done
+for name in $(kubectl -n argocd get deployments -o name | sed 's/.*\///g'); do kubectl -n argocd patch deployment $name --type merge -p '{"metadata":{"labels": {"backstage.io/kubernetes-id": "argocd"}}, "spec": {"template":{"metadata":{"labels":{"backstage.io/kubernetes-id": "argocd"}}}}}'; done
 for file in argocd/applications; do
     kubectl create -f $file
 done

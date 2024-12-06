@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: argocd
+  description: |
+    argocd description
+  links:
+    - title: Website
+      url: https://argocd.localhost:4433
+    - title: Documentation
+      url: https://argo-cd.readthedocs.io
+  annotations:
+    github.com/project-slug: argoproj/argo-cd
+    backstage.io/techdocs-ref: dir:.
+    lighthouse.com/website-url: https://argocd.localhost:4433
+    argocd/app-name: argocd
+    backstage.io/kubernetes-namespace: argocd
+    backstage.io/kubernetes-id: argocd
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
