@@ -16,8 +16,8 @@ spec:
           - Deployment
           - StatefulSet
           - Pod
-          namespaceSelector:
-            matchName: cattle-system
+          namespaces:
+          - cattle-system
     mutate:
       patchStrategicMerge:
         metadata:
