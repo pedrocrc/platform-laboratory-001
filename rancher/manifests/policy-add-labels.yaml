@@ -11,6 +11,11 @@ spec:
     match:
       any:
       - resources:
+          kinds:
+          - DaemonSet
+          - Deployment
+          - StatefulSet
+          - Pod
           namespaceSelector:
             matchName: cattle-system
     mutate:
