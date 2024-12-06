@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rancher
+  namespace: argocd
+  labels:
+    app: rancher
+spec:
+  project: default
+  sources:
+  - repoURL: https://releases.rancher.com/server-charts/latest
+    targetRevision: v2.10.0
+    chart: rancher
+    helm:
+      values: |
+        ingress:
+          enabled: false
+        hostname: rancher.localhost
+        bootstrapPassword: admin
+  - repoURL: https://github.com/pedrocrc/platform-laboratory-001.git
+    targetRevision: HEAD
+    path: rancher/manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cattle-system
+          
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 2
