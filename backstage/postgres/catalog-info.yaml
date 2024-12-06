@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-postgres
+  description: |
+    backstage-postgres description
+  links:
+    - title: Documentation
+      url: https://www.postgresql.org/docs/
+  annotations:
+    github.com/project-slug: postgres/postgres
+    backstage.io/techdocs-ref: dir:.
+    backstage-postgres/app-name: backstage-postgres
+    backstage.io/kubernetes-namespace: backstage-postgres
+    backstage.io/kubernetes-id: backstage-postgres
+spec:
+  type: service
+  owner: guests
+  lifecycle: production

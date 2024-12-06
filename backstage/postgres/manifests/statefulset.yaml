@@ -3,6 +3,7 @@ kind: StatefulSet
 metadata:
   labels:
     app: postgres
+    backstage.io/kubernetes-id: backstage-postgres
   name: postgres
   namespace: backstage-postgres
 spec:
@@ -16,6 +17,7 @@ spec:
     metadata:
       labels:
         app: postgres
+        backstage.io/kubernetes-id: backstage-postgres
     spec:
       containers:
       - env:
