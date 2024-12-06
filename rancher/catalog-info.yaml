@@ -15,6 +15,6 @@ metadata:
     lighthouse.com/website-url: https://rancher.localhost:4433
     argocd/app-name: rancher
 spec:
-  type: library
+  type: website
   owner: guests
   lifecycle: production
