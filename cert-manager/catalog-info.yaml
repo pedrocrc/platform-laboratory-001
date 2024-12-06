@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cert-manager
+  description: |
+    cert-manager description
+  links:
+    - title: Documentation
+      url: https://cert-manager.io/docs/
+  annotations:
+    github.com/project-slug: cert-manager/cert-manager
+    backstage.io/techdocs-ref: dir:.
+    cert-manager/app-name: cert-manager
+    backstage.io/kubernetes-namespace: cert-manager
+    backstage.io/kubernetes-id: cert-manager
+    argocd/app-name: cert-manager
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
