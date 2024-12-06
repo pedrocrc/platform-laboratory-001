@@ -14,7 +14,9 @@ spec:
           kinds:
           - Pod
           namespaces:
-          - cilium-http-gateway
+          - kube-system
+          names:
+          - cilium-envoy-*
     mutate:
       patchStrategicMerge:
         metadata:
