@@ -137,8 +137,8 @@ kubernetes:
     - type: 'config'
       clusters:
         - url: ${K8S_URL}
-          name: local
-          title: Cluster local
+          name: ${K8S_NAME}
+          title: ${K8S_TITLE}
           authProvider: serviceAccount
           skipTLSVerify: true
           skipMetricsLookup: true
