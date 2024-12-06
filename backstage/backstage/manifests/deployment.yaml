@@ -15,7 +15,7 @@ spec:
       serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.22
+          image: pedrocrc/lab-backstage:0.0.23
           imagePullPolicy: Always
           ports:
             - name: http
@@ -38,6 +38,11 @@ spec:
                 secretKeyRef:
                   name: argocd-secret
                   key: token
+            - name: ARGOCD_SERVER
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-secret
+                  key: server
           envFrom:
             - secretRef:
                 name: backstage-secrets

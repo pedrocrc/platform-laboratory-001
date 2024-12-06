@@ -49,7 +49,7 @@ integrations:
 
 proxy:
   '/argocd/api':
-    target: https://backstage.localhost:4433/api/v1/
+    target: ${ARGOCD_SERVER}/api/v1/
     changeOrigin: true
     # only if your argocd api has self-signed cert
     secure: false
