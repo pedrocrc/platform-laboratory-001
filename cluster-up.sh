@@ -21,6 +21,7 @@ kubectl -n argocd create -f https://raw.githubusercontent.com/argoproj/argo-cd/r
 kubectl -n argocd patch cm argocd-cmd-params-cm --type merge -p '{"data":{"server.insecure": "true"}}'
 kubectl -n argocd patch cm argocd-cm --type merge -p '{"data":{"resource.exclusions": "- apiGroups:\n  - cilium.io\n  kinds:\n  - CiliumIdentity\n  clusters:\n  - \"*\""}}'
 kubectl -n argocd patch cm argocd-cm --type merge -p '{"data":{"accounts.backstage": "apiKey", "accounts.backstage.enabled": "true"}}'
+kubectl -n argocd patch cm argocd-rbac-cm --type merge -p '{"data":{"policy.default": "role:admin"}}'
 for file in argocd/manifests; do
     kubectl create -f $file
 done
