@@ -16,6 +16,6 @@ metadata:
     argocd/app-name: rancher
     backstage.io/kubernetes-namespace: cattle-system
 spec:
-  type: website
+  type: service
   owner: guests
   lifecycle: production
