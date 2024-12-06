@@ -146,10 +146,10 @@ kubernetes:
           dashboardUrl: ${RANCHER_URL}
           dashboardApp: rancher
           caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-          customResources:
-            - group: 'argoproj.io'
-              apiVersion: 'v1alpha1'
-              plural: 'rollouts'
+          # customResources:
+          #   - group: 'argoproj.io'
+          #     apiVersion: 'v1alpha1'
+          #     plural: 'rollouts'
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
