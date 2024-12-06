@@ -143,14 +143,13 @@ kubernetes:
           skipTLSVerify: true
           skipMetricsLookup: false
           serviceAccountToken: ${K8S_SA_TOKEN}
-          dashboardUrl: ${RANCHER_URL} # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
+          dashboardUrl: ${RANCHER_URL}
           dashboardApp: rancher
-          # caData: ${K8S_CONFIG_CA_DATA}
-          # caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-          # customResources:
-          #   - group: 'argoproj.io'
-          #     apiVersion: 'v1alpha1'
-          #     plural: 'rollouts'
+          caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+          customResources:
+            - group: 'argoproj.io'
+              apiVersion: 'v1alpha1'
+              plural: 'rollouts'
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
