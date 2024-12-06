@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: metrics-server
+  description: |
+    metrics-server description
+  links:
+    - title: Documentation
+      url: https://kubernetes-sigs.github.io/metrics-server/
+  annotations:
+    github.com/project-slug: kubernetes-sigs/metrics-server
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: metrics-server
+    backstage.io/kubernetes-namespace: metrics-server
+    backstage.io/kubernetes-id: metrics-server
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
