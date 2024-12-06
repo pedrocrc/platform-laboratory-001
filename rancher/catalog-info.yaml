@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rancher
+  description: |
+    Rancher description
+  links:
+    - title: Website
+      url: https://rancher.localhost:4433
+    - title: Documentation
+      url: https://ranchermanager.docs.rancher.com
+  annotations:
+    github.com/project-slug: rancher/rancher
+    backstage.io/techdocs-ref: dir:.
+    lighthouse.com/website-url: https://rancher.localhost:4433
+spec:
+  type: library
+  owner: Pedro
+  lifecycle: production
