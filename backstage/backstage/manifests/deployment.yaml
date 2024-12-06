@@ -44,7 +44,7 @@ spec:
                   name: argocd-secret
                   key: server
             - name: KUBERNETES_URL
-              value: https://127.0.0.1:57318
+              value: https://kubernetes.default.svc
             - name: RANCHER_URL
               value: https://rancher.localhost:4433
           envFrom:
