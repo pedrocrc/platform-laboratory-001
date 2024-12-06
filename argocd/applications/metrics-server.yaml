@@ -1,20 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kube-state-metrics
+  name: metrics-server
   namespace: argocd
   labels:
-    app: kube-state-metrics
+    app: metrics-server
 spec:
   project: default
   source:
-    repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 5.27.0
-    chart: kube-state-metrics
+    repoURL: https://kubernetes-sigs.github.io/metrics-server/
+    targetRevision: 3.12.2
+    chart: metrics-server
+    helm:
+      values: |
+        args:
+        - --kubelet-insecure-tls
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-state-metrics
+    namespace: metrics-server
           
   syncPolicy:
     automated:
