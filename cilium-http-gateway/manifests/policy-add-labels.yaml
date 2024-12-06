@@ -16,7 +16,7 @@ spec:
           namespaces:
           - kube-system
           names:
-          - cilium-envoy-*
+          - cilium-envoy*
     mutate:
       patchStrategicMerge:
         metadata:
