@@ -14,6 +14,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     lighthouse.com/website-url: https://rancher.localhost:4433
     argocd/app-name: rancher
+    backstage.io/kubernetes-id: rancher
 spec:
   type: website
   owner: guests
