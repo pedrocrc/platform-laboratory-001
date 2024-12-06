@@ -16,5 +16,5 @@ metadata:
     argocd/app-name: rancher
 spec:
   type: library
-  owner: pedrocrc
+  owner: guests
   lifecycle: production
