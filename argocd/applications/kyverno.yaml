@@ -11,6 +11,37 @@ spec:
     repoURL: https://kyverno.github.io/kyverno/
     targetRevision: 3.3.3
     chart: kyverno
+    helm:
+      values: |
+        crds:
+          customLabels:
+            backstage.io/kubernetes-id: kyverno
+          migration:
+            podLabels: 
+              backstage.io/kubernetes-id: kyverno
+        config:
+          webhookLabels:
+            backstage.io/kubernetes-id: kyverno
+        customLabels:
+          backstage.io/kubernetes-id: kyverno
+        webhooksCleanup:
+          podLabels:
+            backstage.io/kubernetes-id: kyverno
+        policyReportsCleanup:
+          podLabels:
+            backstage.io/kubernetes-id: kyverno
+        admissionController:
+          podLabels:
+            backstage.io/kubernetes-id: kyverno
+        backgroundController:
+          podLabels:
+            backstage.io/kubernetes-id: kyverno
+        cleanupController:
+          podLabels:
+            backstage.io/kubernetes-id: kyverno
+        reportsController:
+          podLabels:
+            backstage.io/kubernetes-id: kyverno
 
   destination:
     server: https://kubernetes.default.svc

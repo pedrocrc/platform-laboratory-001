@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: kyverno
+  description: |
+    kyverno description
+  links:
+    - title: Documentation
+      url: https://kyverno.io/docs/
+  annotations:
+    github.com/project-slug: kyverno/kyverno
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: kyverno
+    backstage.io/kubernetes-id: kyverno
+    argocd/app-name: kyverno
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
