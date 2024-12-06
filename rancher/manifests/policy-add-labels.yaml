@@ -12,9 +12,6 @@ spec:
       any:
       - resources:
           kinds:
-          - DaemonSet
-          - Deployment
-          - StatefulSet
           - Pod
           namespaces:
           - cattle-system
