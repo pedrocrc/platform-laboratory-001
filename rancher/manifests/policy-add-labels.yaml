@@ -1,0 +1,20 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-labels
+  labels:
+    backstage.io/kubernetes-id: rancher
+spec:
+  background: true
+  rules:
+  - name: add-labels
+    match:
+      any:
+      - resources:
+          namespaceSelector:
+            matchName: cattle-system
+    mutate:
+      patchStrategicMerge:
+        metadata:
+          labels:
+            backstage.io/kubernetes-id: rancher
