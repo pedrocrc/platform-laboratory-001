@@ -10,7 +10,6 @@ metadata:
   annotations:
     github.com/project-slug: postgres/postgres
     backstage.io/techdocs-ref: dir:.
-    backstage-postgres/app-name: backstage-postgres
     backstage.io/kubernetes-namespace: backstage-postgres
     backstage.io/kubernetes-id: backstage-postgres
     argocd/app-name: backstage-postgres

@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cilium-http-gateway
+  description: |
+    cilium-http-gateway description
+  links:
+    - title: Documentation
+      url: https://docs.cilium.io
+  annotations:
+    github.com/project-slug: cilium/cilium
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: cilium-http-gateway
+    backstage.io/kubernetes-id: cilium-http-gateway
+    argocd/app-name: cilium-http-gateway
+spec:
+  type: service
+  owner: guests
+  lifecycle: production

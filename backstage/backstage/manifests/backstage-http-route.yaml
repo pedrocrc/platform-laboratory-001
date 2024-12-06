@@ -7,7 +7,7 @@ spec:
   - backstage.localhost
   parentRefs:
   - name: cilium-http-gateway
-    namespace: cilium-gateway
+    namespace: cilium-http-gateway
   rules:
   - matches:
     - path:

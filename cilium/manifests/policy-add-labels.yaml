@@ -1,9 +1,9 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: rancher-add-labels
+  name: cilium-http-gateway-add-labels
   labels:
-    backstage.io/kubernetes-id: rancher
+    backstage.io/kubernetes-id: cilium-http-gateway
 spec:
   background: true
   rules:
@@ -14,9 +14,9 @@ spec:
           kinds:
           - Pod
           namespaces:
-          - cattle-system
+          - cilium-http-gateway
     mutate:
       patchStrategicMerge:
         metadata:
           labels:
-            backstage.io/kubernetes-id: rancher
+            backstage.io/kubernetes-id: cilium-http-gateway
