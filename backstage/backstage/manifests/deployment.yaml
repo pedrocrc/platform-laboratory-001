@@ -15,7 +15,7 @@ spec:
       serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.27
+          image: pedrocrc/lab-backstage:0.0.28
           imagePullPolicy: Always
           ports:
             - name: http
@@ -28,6 +28,8 @@ spec:
               memory: "256Mi"
               cpu: "250m"
           env:
+            - name: K8S_URL
+              value: https://kubernetes.default.svc
             - name: K8S_SA_TOKEN
               valueFrom:
                 secretKeyRef:
@@ -43,8 +45,6 @@ spec:
                 secretKeyRef:
                   name: argocd-secret
                   key: server
-            - name: KUBERNETES_URL
-              value: https://kubernetes.default.svc
             - name: RANCHER_URL
               value: https://rancher.localhost:4433
           envFrom:

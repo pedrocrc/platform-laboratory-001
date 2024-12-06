@@ -136,17 +136,17 @@ kubernetes:
   clusterLocatorMethods:
     - type: 'config'
       clusters:
-        - url: ${KUBERNETES_URL}
+        - url: ${K8S_URL}
           name: local
           title: Cluster local
           authProvider: serviceAccount
           skipTLSVerify: true
           skipMetricsLookup: true
-          # serviceAccountToken: ${K8S_SA_TOKEN}
+          serviceAccountToken: ${K8S_SA_TOKEN}
           # dashboardUrl: ${RANCHER_URL} # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
           # dashboardApp: rancher
           # caData: ${K8S_CONFIG_CA_DATA}
-          caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+          # caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
           # customResources:
           #   - group: 'argoproj.io'
           #     apiVersion: 'v1alpha1'
