@@ -13,6 +13,7 @@ metadata:
     github.com/project-slug: rancher/rancher
     backstage.io/techdocs-ref: dir:.
     lighthouse.com/website-url: https://rancher.localhost:4433
+    argocd/app-name: rancher
 spec:
   type: library
   owner: Pedro
