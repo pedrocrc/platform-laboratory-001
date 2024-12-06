@@ -16,6 +16,7 @@ helm upgrade --install --namespace kube-system cilium cilium/cilium --version 1.
     --set l7Proxy=true \
     --set gatewayAPI.enabled=true \
     --set gatewayAPI.hostNetwork.enabled=true
+kubectl -n kube-system patch ds cilium-envoy --type merge -p '{"metadata":{"labels": {"backstage.io/kubernetes-id": "cilium-http-gateway"}}, "spec": {"template":{"metadata":{"labels":{"backstage.io/kubernetes-id": "cilium-http-gateway"}}}}}'
 kubectl create ns argocd
 kubectl -n argocd create -f https://raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/install.yaml
 kubectl -n argocd patch cm argocd-cmd-params-cm --type merge -p '{"data":{"server.insecure": "true"}}'
