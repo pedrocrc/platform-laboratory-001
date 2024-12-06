@@ -15,7 +15,7 @@ spec:
       serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.26
+          image: pedrocrc/lab-backstage:0.0.27
           imagePullPolicy: Always
           ports:
             - name: http
@@ -43,6 +43,10 @@ spec:
                 secretKeyRef:
                   name: argocd-secret
                   key: server
+            - name: KUBERNETES_URL
+              value: https://127.0.0.1:57318
+            - name: RANCHER_URL
+              value: https://rancher.localhost:4433
           envFrom:
             - secretRef:
                 name: backstage-secrets
