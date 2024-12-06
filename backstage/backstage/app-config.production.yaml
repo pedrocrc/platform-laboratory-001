@@ -32,29 +32,6 @@ auth:
   providers:
     guest: {}
 
-kubernetes:
-  frontend:
-    podDelete:
-      enabled: true
-  serviceLocatorMethod:
-    type: 'multiTenant'
-  clusterLocatorMethods:
-    - type: 'config'
-      clusters:
-        - url: https://kubernetes.default.svc
-          name: local
-          authProvider: 'serviceAccount'
-          skipTLSVerify: false
-          skipMetricsLookup: true
-          serviceAccountToken: ${K8S_SA_TOKEN}
-          dashboardUrl: https://rancher.localhost:4433 # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
-          dashboardApp: rancher
-          # caData: ${K8S_CONFIG_CA_DATA}
-          caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-          customResources:
-            - group: 'argoproj.io'
-              apiVersion: 'v1alpha1'
-              plural: 'rollouts'
 catalog:
   # Overrides the default list locations from app-config.yaml as these contain example data.
   # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details

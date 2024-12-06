@@ -138,18 +138,19 @@ kubernetes:
       clusters:
         - url: https://kubernetes.default.svc
           name: local
-          authProvider: 'serviceAccount'
-          skipTLSVerify: false
+          title: Cluster local
+          authProvider: serviceAccount
+          skipTLSVerify: true
           skipMetricsLookup: true
-          serviceAccountToken: ${K8S_SA_TOKEN}
-          dashboardUrl: https://rancher.localhost:4433 # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
-          dashboardApp: rancher
+          # serviceAccountToken: ${K8S_SA_TOKEN}
+          # dashboardUrl: https://rancher.localhost:4433 # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
+          # dashboardApp: rancher
           # caData: ${K8S_CONFIG_CA_DATA}
           caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-          customResources:
-            - group: 'argoproj.io'
-              apiVersion: 'v1alpha1'
-              plural: 'rollouts'
+          # customResources:
+          #   - group: 'argoproj.io'
+          #     apiVersion: 'v1alpha1'
+          #     plural: 'rollouts'
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
