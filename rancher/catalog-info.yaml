@@ -15,6 +15,7 @@ metadata:
     lighthouse.com/website-url: https://rancher.localhost:4433
     argocd/app-name: rancher
     backstage.io/kubernetes-namespace: cattle-system
+    backstage.io/kubernetes-id: rancher
 spec:
   type: service
   owner: guests

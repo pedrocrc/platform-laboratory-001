@@ -134,7 +134,7 @@ kubernetes:
   serviceLocatorMethod:
     type: 'multiTenant'
   clusterLocatorMethods:
-    - type: 'config'
+    - type: config
       clusters:
         - url: ${K8S_URL}
           name: ${K8S_NAME}
