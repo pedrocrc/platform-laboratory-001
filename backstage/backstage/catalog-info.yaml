@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: backstage
+  name: backstage-backend
   description: An example of a Backstage application.
   annotations:
     github.com/project-slug: backstage/backstage
@@ -18,3 +18,5 @@ spec:
   type: service
   owner: guests
   lifecycle: production
+  dependsOn:
+    - resource:default/backstage-postgres

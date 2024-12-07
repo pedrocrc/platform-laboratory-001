@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Resource
 metadata:
   name: backstage-postgres
   description: |
@@ -14,6 +14,8 @@ metadata:
     backstage.io/kubernetes-id: backstage-postgres
     argocd/app-name: backstage-postgres
 spec:
-  type: service
+  type: database
   owner: guests
-  lifecycle: production
+  system: backstage
+  dependencyOf:
+    - component:default/backstage-backend
