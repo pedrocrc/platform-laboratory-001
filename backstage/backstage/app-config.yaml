@@ -95,6 +95,9 @@ scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  orphanStrategy: delete
+  processingInterval:
+    minutes: 2
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
@@ -102,8 +105,8 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
-    - type: file
-      target: ../../examples/entities.yaml
+    #- type: file
+      #target: ../../examples/entities.yaml
 
     # Local example template
     - type: file
