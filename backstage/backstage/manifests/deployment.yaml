@@ -55,6 +55,11 @@ spec:
                   key: server
             - name: RANCHER_URL
               value: https://rancher.localhost:4433
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: github-token
+                  key: token
           envFrom:
             - secretRef:
                 name: backstage-secrets
