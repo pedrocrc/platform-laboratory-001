@@ -9,6 +9,7 @@ metadata:
     backstage.io/kubernetes-namespace: backstage
     backstage.io/kubernetes-id: backstage
     argocd/app-name: backstage
+    lighthouse.com/website-url: https://backstage.localhost:4433
   # Example for optional annotations
   # annotations:
   #   github.com/project-slug: backstage/backstage
