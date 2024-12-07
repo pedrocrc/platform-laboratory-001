@@ -65,7 +65,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     apt-get update && \
     apt-get install -y --no-install-recommends python3 g++ build-essential && \
     rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && apt-get install -y python3 python3-pip python3-cookiecutter
 # Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
 # in which case you should also move better-sqlite3 to "devDependencies" in package.json.
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
@@ -83,7 +83,6 @@ USER node
 # If this occurs, then ensure BuildKit is enabled (`DOCKER_BUILDKIT=1`)
 # so the app dir is correctly created as `node`.
 WORKDIR /app
-
 # Copy the install dependencies from the build stage and context
 COPY --from=build --chown=node:node /app/.yarn ./.yarn
 COPY --from=build --chown=node:node /app/.yarnrc.yml  ./

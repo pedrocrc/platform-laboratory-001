@@ -19,7 +19,7 @@ spec:
       serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.38
+          image: pedrocrc/lab-backstage:0.0.39
           imagePullPolicy: Always
           ports:
             - name: http
