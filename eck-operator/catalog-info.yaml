@@ -17,3 +17,5 @@ spec:
   type: service
   owner: guests
   lifecycle: production
+  dependencyOf:
+    - resource:default/backstage-elasticsearch
