@@ -20,3 +20,4 @@ spec:
   lifecycle: production
   dependsOn:
     - resource:default/backstage-postgres
+  system: backstage
