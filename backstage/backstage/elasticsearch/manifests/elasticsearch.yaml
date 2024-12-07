@@ -2,6 +2,9 @@ apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
   name: elasticsearch
+  labels:
+    app: elasticsearch
+    backstage.io/kubernetes-id: backstage-elasticsearch
 spec:
   version: 8.16.1
   nodeSets:
@@ -9,3 +12,7 @@ spec:
     count: 1
     config:
       node.store.allow_mmap: false
+    podTemplate:
+      metadata:
+        labels:
+          backstage.io/kubernetes-id: backstage-elasticsearch
