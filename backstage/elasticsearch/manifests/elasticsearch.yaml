@@ -7,6 +7,10 @@ metadata:
     backstage.io/kubernetes-id: backstage-elasticsearch
 spec:
   version: 8.16.1
+  http:
+    tls:
+      selfSignedCertificate:
+        disabled: true
   nodeSets:
   - name: default
     count: 1
