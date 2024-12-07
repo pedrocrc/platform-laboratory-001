@@ -98,9 +98,9 @@ catalog:
   orphanStrategy: delete
   processingInterval:
     minutes: 2
-  import:
-    entityFilename: catalog-info.yaml
-    pullRequestBranchName: backstage-integration
+  # import:
+    # entityFilename: catalog-info.yaml
+    # pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location]
   locations:
