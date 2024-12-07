@@ -44,7 +44,8 @@ backend.add(import('@backstage/plugin-search-backend'));
 
 // search engine
 // See https://backstage.io/docs/features/search/search-engines
-backend.add(import('@backstage/plugin-search-backend-module-pg'));
+// backend.add(import('@backstage/plugin-search-backend-module-pg'));
+backend.add(import('@backstage/plugin-search-backend-module-elasticsearch'));
 
 // search collators
 backend.add(import('@backstage/plugin-search-backend-module-catalog'));
@@ -52,5 +53,4 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
-backend.add(import('@backstage/plugin-search-backend-module-elasticsearch'));
 backend.start();
