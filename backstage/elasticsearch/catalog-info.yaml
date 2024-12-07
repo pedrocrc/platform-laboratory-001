@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backstage-elasticsearch
+  description: |
+    backstage-elasticsearch description
+  links:
+    - title: Documentation
+      url: https://www.elastic.co/docs
+  annotations:
+    github.com/project-slug: elastic/elasticsearch
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: backstage-elasticsearch
+    backstage.io/kubernetes-id: backstage-elasticsearch
+    argocd/app-name: backstage-elasticsearch
+spec:
+  type: database
+  owner: guests
+  system: backstage
+  dependencyOf:
+    - component:default/backstage-backend
