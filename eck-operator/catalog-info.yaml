@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: eck-operator
+  description: |
+    eck-operator description
+  links:
+    - title: Documentation
+      url: https://docs.cilium.io
+  annotations:
+    github.com/project-slug: openshift/elasticsearch-operator
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: eck-operator
+    backstage.io/kubernetes-id: eck-operator
+    argocd/app-name: eck-operator
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
