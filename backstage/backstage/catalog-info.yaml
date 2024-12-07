@@ -20,4 +20,5 @@ spec:
   lifecycle: production
   dependsOn:
     - resource:default/backstage-postgres
+    - resource:default/backstage-elasticsearch
   system: backstage

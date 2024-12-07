@@ -19,3 +19,5 @@ spec:
   system: backstage
   dependencyOf:
     - component:default/backstage-backend
+  dependsOn:
+    - component:default/eck-operator
