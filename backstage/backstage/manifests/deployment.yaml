@@ -1,6 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: backstage
+    backstage.io/kubernetes-id: backstage
   name: backstage
 spec:
   replicas: 1
@@ -11,11 +14,12 @@ spec:
     metadata:
       labels:
         app: backstage
+        backstage.io/kubernetes-id: backstage
     spec:
       serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.36
+          image: pedrocrc/lab-backstage:0.0.37
           imagePullPolicy: Always
           ports:
             - name: http
