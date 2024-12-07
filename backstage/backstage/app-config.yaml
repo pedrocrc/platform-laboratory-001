@@ -163,6 +163,3 @@ permission:
 search:
   elasticsearch:
     node: ${ELASTICSEARCH_NODE}
-    auth:
-      username: ${ELASTICSEARCH_USERNAME}
-      password: ${ELASTICSEARCH_PASSWORD}
