@@ -159,3 +159,10 @@ kubernetes:
 permission:
   # setting this to `false` will disable permissions
   enabled: true
+
+search:
+  elasticsearch:
+    node: ${ELASTICSEARCH_NODE}
+    auth:
+      username: ${ELASTICSEARCH_USERNAME}
+      password: ${ELASTICSEARCH_PASSWORD}
