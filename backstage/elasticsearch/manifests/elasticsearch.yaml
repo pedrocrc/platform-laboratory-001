@@ -7,21 +7,11 @@ metadata:
     backstage.io/kubernetes-id: backstage-elasticsearch
 spec:
   version: 8.16.1
-  http:
-    tls:
-      selfSignedCertificate:
-        disabled: true
   nodeSets:
   - name: default
     count: 1
     config:
       node.store.allow_mmap: false
-      xpack.security.enabled: false
-      xpack.security.transport.ssl.enabled: false
-      xpack.security.authc:
-        anonymous:
-          username: anonymous_user 
-          roles: superuser
 
     podTemplate:
       metadata:
