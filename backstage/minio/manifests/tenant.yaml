@@ -13,10 +13,12 @@ spec:
   credsSecret:
     name: minio-creds-secret
   features:
+    bucketDNS: false
     domains:
       console: https://console.backstage-minio.localhost:4433
       minio:
         - https://backstage-minio.localhost:4433
+    enableSFTP: false
   pools:
     - servers: 2
       name: pool-0
