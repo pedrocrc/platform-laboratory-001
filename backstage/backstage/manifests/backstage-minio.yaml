@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: backstage-secrets
+  name: backstage-minio
 type: Opaque
 stringData:
   TECHDOCS_S3_BUCKET: techdocs-storage
