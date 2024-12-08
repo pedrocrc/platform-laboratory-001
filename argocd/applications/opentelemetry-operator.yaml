@@ -18,11 +18,6 @@ spec:
             repository: otel/opentelemetry-collector-k8s
           podLabels:
             backstage.io/kubernetes-id: opentelemetry-operator
-        admissionWebhooks:
-          certManager:
-            enabled: false
-          autoGenerateCert:
-            enabled: true
         additionalLabels:
           backstage.io/kubernetes-id: opentelemetry-operator
 

@@ -17,3 +17,13 @@ spec:
       metadata:
         labels:
           backstage.io/kubernetes-id: backstage-elasticsearch
+      spec:
+        containers:
+        - name: elasticsearch
+          resources:
+            requests:
+              memory: 1Gi
+              cpu: 100m
+            limits:
+              memory: 1Gi
+              cpu: 500m
