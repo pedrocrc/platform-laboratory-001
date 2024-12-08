@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: minio-operator-add-labels
+  labels:
+    backstage.io/kubernetes-id: minio-operator
+spec:
+  background: true
+  rules:
+  - name: add-labels
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+          namespaces:
+          - minio-operator
+    mutate:
+      patchStrategicMerge:
+        metadata:
+          labels:
+            backstage.io/kubernetes-id: minio-operator

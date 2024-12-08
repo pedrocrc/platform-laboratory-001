@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: minio-operator
+  description: |
+    minio-operator description
+  links:
+    - title: Documentation
+      url: https://min.io/docs/minio/kubernetes/upstream/operations/installation.html
+  annotations:
+    github.com/project-slug: minio/operator
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: minio-operator
+    backstage.io/kubernetes-namespace: minio-operator
+    backstage.io/kubernetes-id: minio-operator
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
