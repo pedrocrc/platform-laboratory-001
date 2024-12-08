@@ -111,10 +111,12 @@ COPY --chown=node:node app-config*.yaml ./
 # This will include the examples, if you don't need these simply remove this line
 COPY --chown=node:node examples ./examples
 
+COPY --chown=node:node packages/backend/src/instrumentation.js ./
+
 # This switches many Node.js dependencies to production mode.
 ENV NODE_ENV=production
 
 # This disables node snapshot for Node 20 to work with the Scaffolder
 ENV NODE_OPTIONS="--no-node-snapshot"
 
-CMD ["node", "packages/backend", "--config", "app-config.yaml", "--config", "app-config.production.yaml"]
+CMD ["node", "--require", "./instrumentation.js", "packages/backend", "--config", "app-config.yaml", "--config", "app-config.production.yaml"]
