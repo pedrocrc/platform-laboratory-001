@@ -70,10 +70,18 @@ proxy:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'local'
   publisher:
-    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
-
+    type: 'awsS3' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+    awsS3:
+      bucketName: ${TECHDOCS_S3_BUCKET}
+      bucketRootPath: ${TECHDOCS_S3_ROOT_PATH}
+      credentials:
+        accessKeyId: ${TECHDOCS_S3_ACCESS_KEY_ID}
+        secretAccessKey: ${TECHDOCS_S3_SECRET_ACCESS_KEY}
+      region: local
+      endpoint: ${TECHDOCS_S3_ENDPOINT}
+      s3ForcePathStyle: true
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   environment: production

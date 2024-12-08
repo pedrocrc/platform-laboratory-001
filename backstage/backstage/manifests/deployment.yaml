@@ -19,7 +19,7 @@ spec:
       serviceAccountName: backstage
       containers:
         - name: backstage
-          image: pedrocrc/lab-backstage:0.0.43
+          image: pedrocrc/lab-backstage:0.0.45
           imagePullPolicy: Always
           ports:
             - name: http
@@ -65,6 +65,8 @@ spec:
                 name: backstage-secrets
             - secretRef:
                 name: backstage-elasticsearch
+            - secretRef:
+                name: backstage-minio
           readinessProbe:
             httpGet:
               path: /.backstage/health/v1/readiness
