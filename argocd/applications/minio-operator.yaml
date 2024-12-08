@@ -11,6 +11,11 @@ spec:
   - repoURL: https://operator.min.io
     targetRevision: 4.3.7
     chart: minio-operator
+    helm:
+      values: |
+        console:
+          replicaCount: 0
+        tenants: []
   - repoURL: https://github.com/pedrocrc/platform-laboratory-001.git
     targetRevision: HEAD
     path: minio-operator/manifests

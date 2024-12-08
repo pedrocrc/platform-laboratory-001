@@ -20,3 +20,4 @@ spec:
         metadata:
           labels:
             backstage.io/kubernetes-id: minio-operator
+    skipBackgroundRequests: true
