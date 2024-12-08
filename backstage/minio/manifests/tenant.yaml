@@ -12,6 +12,9 @@ metadata:
 spec:
   credsSecret:
     name: minio-creds-secret
+  features:
+    domains:
+      console: https://console.minio.localhost
   pools:
     - servers: 2
       name: pool-0
