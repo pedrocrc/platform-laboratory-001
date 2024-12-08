@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backstage-minio
+  namespace: argocd
+  labels:
+    app: backstage-minio
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pedrocrc/platform-laboratory-001.git
+    targetRevision: HEAD
+    path: backstage/minio/manifests
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: backstage-minio
+          
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 2

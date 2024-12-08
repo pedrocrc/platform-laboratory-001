@@ -1,0 +1,62 @@
+apiVersion: minio.min.io/v2
+kind: Tenant
+metadata:
+  name: backstage-minio
+  labels:
+    app: backstage-minio
+    backstage.io/kubernetes-id: backstage-elasticsearch
+  annotations:
+    prometheus.io/path: /minio/v2/metrics/cluster
+    prometheus.io/port: "9000"
+    prometheus.io/scrape: "true"
+
+
+spec:
+  pools:
+    - servers: 2
+      name: pool-0
+      labels:
+        app: backstage-minio
+        backstage.io/kubernetes-id: backstage-elasticsearch
+      topologySpreadConstraints: [ ]
+      volumesPerServer: 1
+      nodeSelector: { }
+      tolerations: [ ]
+      resources:
+        requests:
+          cpu: 100m
+          memory: 128Mi
+        limits:
+          cpu: 1
+          memory: 2Gi
+      volumeClaimTemplate:
+        apiVersion: v1
+        kind: persistentvolumeclaims
+        metadata: { }
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 10Gi
+          storageClassName: standard
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        fsGroup: 1000
+        fsGroupChangePolicy: "OnRootMismatch"
+      containerSecurityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        seccompProfile:
+          type: RuntimeDefault
+  requestAutoCert: true
+  prometheusOperator:
+    labels:
+      app: minio-sm
