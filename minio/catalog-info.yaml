@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-minio
+  description: |
+    backstage-minio description
+  links:
+    - title: Documentation
+      url: https://min.io/docs/kes/
+  annotations:
+    github.com/project-slug: minio/minio
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: backstage-minio
+    backstage.io/kubernetes-namespace: backstage-minio
+    backstage.io/kubernetes-id: backstage-minio
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
+  dependencyOf:
+    - component:default/backstage-backend
+  dependsOn:
+    - component:default/minio-operator

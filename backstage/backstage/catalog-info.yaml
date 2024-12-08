@@ -21,4 +21,5 @@ spec:
   dependsOn:
     - resource:default/backstage-postgres
     - resource:default/backstage-elasticsearch
+    - resource:default/backstage-minio
   system: backstage
