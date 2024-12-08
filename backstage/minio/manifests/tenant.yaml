@@ -50,6 +50,6 @@ spec:
         fsGroup: 1000
         fsGroupChangePolicy: "OnRootMismatch"
   requestAutoCert: false
-  prometheusOperator:
-    labels:
-      app: minio-sm
+  # prometheusOperator:
+  #   labels:
+  #     app: minio-sm
