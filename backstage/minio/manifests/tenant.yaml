@@ -12,6 +12,8 @@ metadata:
 
 
 spec:
+  credsSecret:
+    name: minio-creds-secret
   pools:
     - servers: 2
       name: pool-0
