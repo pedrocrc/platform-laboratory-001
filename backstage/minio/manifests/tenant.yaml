@@ -21,7 +21,7 @@ spec:
         app: backstage-minio
         backstage.io/kubernetes-id: backstage-elasticsearch
       topologySpreadConstraints: [ ]
-      volumesPerServer: 1
+      volumesPerServer: 2
       nodeSelector: { }
       tolerations: [ ]
       resources:
