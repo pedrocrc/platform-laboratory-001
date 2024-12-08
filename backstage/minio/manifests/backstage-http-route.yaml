@@ -21,7 +21,7 @@ spec:
             replacePrefixMatch: /
     backendRefs:
     - name: backstage-minio-console
-      port: 80
+      port: 9090
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
@@ -45,5 +45,5 @@ spec:
             type: ReplacePrefixMatch
             replacePrefixMatch: /
     backendRefs:
-    - name: backstage-minio
+    - name: minio
       port: 80
