@@ -54,7 +54,7 @@ spec:
                   name: argocd-secret
                   key: server
             - name: RANCHER_URL
-              value: https://rancher.localhost:4433
+              value: https://rancher.localhost:4433/dashboard/c/local
             - name: GITHUB_TOKEN
               valueFrom:
                 secretKeyRef:
