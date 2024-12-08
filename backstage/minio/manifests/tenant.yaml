@@ -4,13 +4,11 @@ metadata:
   name: backstage-minio
   labels:
     app: backstage-minio
-    backstage.io/kubernetes-id: backstage-elasticsearch
+    backstage.io/kubernetes-id: backstage-minio
   annotations:
     prometheus.io/path: /minio/v2/metrics/cluster
     prometheus.io/port: "9000"
     prometheus.io/scrape: "true"
-
-
 spec:
   credsSecret:
     name: minio-creds-secret
@@ -19,7 +17,7 @@ spec:
       name: pool-0
       labels:
         app: backstage-minio
-        backstage.io/kubernetes-id: backstage-elasticsearch
+        backstage.io/kubernetes-id: backstage-minio
       topologySpreadConstraints: [ ]
       volumesPerServer: 2
       nodeSelector: { }
