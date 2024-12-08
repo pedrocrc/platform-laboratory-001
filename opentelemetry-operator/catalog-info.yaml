@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: opentelemetry-operator
+  description: |
+    opentelemetry-operator description
+  links:
+    - title: Documentation
+      url: https://opentelemetry.io/docs/kubernetes/operator/
+  annotations:
+    github.com/project-slug: open-telemetry/opentelemetry-operator
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: opentelemetry-operator
+    backstage.io/kubernetes-id: opentelemetry-operator
+    argocd/app-name: opentelemetry-operator
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
