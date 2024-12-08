@@ -14,7 +14,7 @@ spec:
     name: minio-creds-secret
   features:
     domains:
-      console: https://console.minio.localhost
+      console: https://console.backstage-minio.localhost:4433
   pools:
     - servers: 2
       name: pool-0
@@ -49,7 +49,7 @@ spec:
         runAsNonRoot: true
         fsGroup: 1000
         fsGroupChangePolicy: "OnRootMismatch"
-  requestAutoCert: true
+  requestAutoCert: false
   prometheusOperator:
     labels:
       app: minio-sm
