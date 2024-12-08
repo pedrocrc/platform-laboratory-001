@@ -22,4 +22,5 @@ spec:
     - resource:default/backstage-postgres
     - resource:default/backstage-elasticsearch
     - component:default/backstage-minio
+    - component:default/opentelemetry-collector
   system: backstage

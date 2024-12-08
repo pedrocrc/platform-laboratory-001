@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opentelemetry-collector
+  namespace: argocd
+  labels:
+    app: opentelemetry-collector
+spec:
+  project: default
+  sources:
+  - repoURL: https://github.com/pedrocrc/platform-laboratory-001.git
+    targetRevision: HEAD
+    path: opentelemetry-collector/manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: opentelemetry-collector
+          
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 2

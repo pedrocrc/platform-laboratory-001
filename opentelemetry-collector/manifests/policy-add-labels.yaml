@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: opentelemetry-collector-add-labels
+  labels:
+    backstage.io/kubernetes-id: opentelemetry-collector
+spec:
+  background: true
+  rules:
+  - name: add-labels
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+          namespaces:
+          - opentelemetry-collector
+    mutate:
+      patchStrategicMerge:
+        metadata:
+          labels:
+            backstage.io/kubernetes-id: opentelemetry-collector

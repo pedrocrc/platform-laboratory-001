@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: opentelemetry-collector
+  description: |
+    opentelemetry-collector description
+  links:
+    - title: Documentation
+      url: https://opentelemetry.io/docs
+  annotations:
+    github.com/project-slug: open-telemetry/opentelemetry-collector-contrib
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: opentelemetry-collector
+    backstage.io/kubernetes-id: opentelemetry-collector
+    argocd/app-name: opentelemetry-collector
+spec:
+  type: service
+  owner: guests
+  lifecycle: production
+  dependencyOf:
+    - component:default/backstage-backend
+  dependsOn:
+    - component:default/opentelemetry-operator
